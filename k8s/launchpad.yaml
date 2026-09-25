@@ -96,11 +96,11 @@ metadata:
   name: launchpad
   namespace: launchpad
   annotations:
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "60"
+    traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik
   rules:
-    - host: launchpad.example.com
+    - host: launchpad.local
       http:
         paths:
           - path: /
