@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A calm control room for shipping reliable software.">
+  <title>Launchpad | Delivery control room</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="/"><span class="brand-mark">L</span><span>launchpad</span></a>
+    <div class="workspace"><span class="workspace-dot"></span><span><small>WORKSPACE</small>northstar / prod</span><span>⌄</span></div>
+    <nav><p class="nav-label">Control room</p><a class="nav-item active" href="#overview">◈ <span>Overview</span></a><a class="nav-item" href="#services">◫ <span>Services</span><b>6</b></a><a class="nav-item" href="#deployments">↗ <span>Deployments</span></a><a class="nav-item" href="#incidents">! <span>Incidents</span><b class="alert">2</b></a><p class="nav-label spaced">Engineering</p><a class="nav-item" href="#activity">◎ <span>Activity</span></a><a class="nav-item" href="#runbooks">▤ <span>Runbooks</span></a></nav>
+    <div class="sidebar-bottom"><div class="system-state"><i></i><div><strong>All systems operational</strong><small>Last checked just now</small></div></div><div class="user"><span class="avatar">HS</span><span><strong>Haseeb Shah</strong><small>Platform engineer</small></span><span>•••</span></div></div>
+  </aside>
+  <main class="main" id="overview">
+    <header class="topbar"><div class="crumbs">Workspace <span>/</span> <strong>Overview</strong></div><div class="top-actions"><button aria-label="Search">⌕</button><button aria-label="Notifications">♢<i></i></button><button class="help">? <span>Help center</span></button></div></header>
+    <div class="content">
+      <section class="hero reveal"><div><p class="eyebrow">THURSDAY, 24 SEPTEMBER 2026 <span class="live">● LIVE</span></p><h1>Good morning, Haseeb<span>.</span></h1><p>A clear view of your delivery systems, so the team can focus on the work that matters.</p></div><button class="primary" id="deployButton">＋ New deployment</button></section>
+      <section class="metrics" aria-label="Workspace metrics">
+        <article class="metric"><div>Deployment frequency <span class="metric-icon mint">↗</span></div><strong>18.4</strong><small>deploys / week <em>↑ 12.8%</em></small><div class="bars mint-bars">▂▅▃▆▄▇▆█▇</div></article>
+        <article class="metric"><div>Change failure rate <span class="metric-icon peach">◒</span></div><strong>4.2<span>%</span></strong><small>of all deployments <em>↓ 1.6%</em></small><div class="bars peach-bars">▇▄▆▃▅▃▅▂▁</div></article>
+        <article class="metric"><div>Lead time for changes <span class="metric-icon sky">◷</span></div><strong>2<span>h</span> 14<span>m</span></strong><small>from commit to prod <em>↑ 8.4%</em></small><div class="bars sky-bars">█▆▇▅▆▄▅▃▄</div></article>
+        <article class="metric"><div>Service reliability <span class="metric-icon violet">⌁</span></div><strong>99.96<span>%</span></strong><small>across all services <em>↑ 0.03%</em></small><div class="bars violet-bars">▅▆▅▇▆█▇██</div></article>
+      </section>
+      <div class="section-grid">
+        <section class="panel" id="deployments"><div class="panel-head"><div><p class="eyebrow">DELIVERY PIPELINE</p><h2>Recent deployments</h2></div><a href="#all-deployments">View all →</a></div><div class="deployments">
+          <div class="deploy-row"><b class="service coral">A</b><div><strong>api-gateway</strong><small>feat: add request tracing · main</small></div><span class="env">Production</span><span class="healthy">● Healthy</span><time>8 min ago</time></div>
+          <div class="deploy-row"><b class="service blue">W</b><div><strong>web-dashboard</strong><small>fix: refresh token flow · main</small></div><span class="env">Production</span><span class="healthy">● Healthy</span><time>34 min ago</time></div>
+          <div class="deploy-row"><b class="service gold">N</b><div><strong>notifications</strong><small>chore: upgrade dependencies · release/v2</small></div><span class="env">Staging</span><span class="pending">● In progress</span><time>1 hr ago</time></div>
+          <div class="deploy-row"><b class="service green">D</b><div><strong>data-worker</strong><small>perf: batch event processing · main</small></div><span class="env">Production</span><span class="healthy">● Healthy</span><time>3 hrs ago</time></div>
+        </div></section>
+        <section class="panel" id="activity"><div class="panel-head"><div><p class="eyebrow">TEAM PULSE</p><h2>Activity</h2></div><button class="more">•••</button></div><div class="activity"><div class="activity-row"><span class="avatar coral-bg">MK</span><div><strong>Maya Kim <small>promoted</small></strong><p>api-gateway → production</p></div><time>8m</time></div><div class="activity-row"><span class="avatar blue-bg">JO</span><div><strong>Jared Osei <small>opened an incident</small></strong><p>Elevated latency in checkout</p></div><time>22m</time></div><div class="activity-row"><span class="avatar gold-bg">SR</span><div><strong>Sam Rivera <small>approved</small></strong><p>notifications release/v2</p></div><time>1h</time></div><div class="activity-row"><span class="avatar violet-bg">TN</span><div><strong>Taylor Ng <small>updated</small></strong><p>Runbook: rollback service</p></div><time>2h</time></div></div></section>
+      </div>
+      <section class="lower-grid"><div class="panel" id="services"><div class="panel-head"><div><p class="eyebrow">SERVICE HEALTH</p><h2>Reliability by service</h2></div><button class="period">Last 30 days ⌄</button></div><div class="chart"><div class="chart-labels"><span>100%</span><span>99.9%</span><span>99.8%</span><span>99.7%</span></div><div class="chart-area"><div class="lines"></div><svg viewBox="0 0 700 170" preserveAspectRatio="none"><path d="M0,45 C40,38 60,58 93,51 S145,40 180,55 S230,31 267,45 S320,61 350,43 S405,29 440,43 S500,33 530,51 S570,40 610,44 S665,28 700,35 L700,170 L0,170Z"/><path class="trend" d="M0,45 C40,38 60,58 93,51 S145,40 180,55 S230,31 267,45 S320,61 350,43 S405,29 440,43 S500,33 530,51 S570,40 610,44 S665,28 700,35"/></svg><div class="chart-x"><span>01 Sep</span><span>08 Sep</span><span>15 Sep</span><span>22 Sep</span><span>Today</span></div></div></div><div class="legend"><span>● api-gateway <b>99.99%</b></span><span>● web-dashboard <b>99.98%</b></span><span>● notifications <b>99.91%</b></span></div></div>
+      <div class="panel" id="incidents"><div class="panel-head"><div><p class="eyebrow">NEEDS ATTENTION</p><h2>Open incidents <sup>2</sup></h2></div><a href="#incidents">View all →</a></div><div class="incident"><b class="incident-icon high">!</b><div><strong>Elevated checkout latency</strong><small>Investigating · 22 min</small></div><span>SEV-2</span></div><div class="incident"><b class="incident-icon low">!</b><div><strong>Worker queue backlog</strong><small>Monitoring · 1 hr</small></div><span class="sev3">SEV-3</span></div><button class="outline" id="runbookButton">Open incident runbook ↗</button></div></section>
+      <footer><span>Launchpad <b>v{{ app_version }}</b></span><span>Data refreshed {{ generated_at }}</span><span class="footer-status">● All systems operational</span></footer>
+    </div>
+  </main>
+</div><div class="toast" id="toast" role="status" aria-live="polite"></div><script src="{{ url_for('static', filename='app.js') }}"></script>
+</body></html>
