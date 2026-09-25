@@ -7,3 +7,10 @@ venv/
 .coverage
 dist/
 build/
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!terraform.tfvars.example
+crash.log
